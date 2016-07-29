@@ -1,0 +1,13 @@
+#ignore resources
+#eclipse project meta files
+.project
+.classpath
+.settings/*
+
+#output files
+target/*
+
+#eclipse web folder
+WebContent/*
+
+
