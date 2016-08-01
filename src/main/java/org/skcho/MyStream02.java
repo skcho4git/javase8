@@ -1,8 +1,8 @@
 package org.skcho;
 
 /**
- * @author skcho
- * 
+ * @author skcho  
+ *  
  */
 
 import java.util.stream.DoubleStream;
