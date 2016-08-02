@@ -28,22 +28,37 @@ public class MyStream05 {
 		
 		List<String> list = Arrays.asList("alpha", "beta", "apple", "bridge", "application");
 		
-		Map<String,List<String>> map = null;
-		Map<String,Long> map1 = null;
+		Map<String,List<String>> map00 = null;
+		Map<String,Long> map01 = null;
+		int count = 0;
 		
 		
-		map = list.stream()
+		map00 = list.stream()
 		          .collect(Collectors.groupingBy(w -> w.substring(0,1)));
 		
-		map1 = list.stream()
+		System.out.println(map00);
+		
+		map01 = list.stream()
 				   .collect(Collectors.groupingBy(w -> w.substring(0,1), 
-						                          Collectors.counting()));
-				  
+						                          Collectors.counting()));	
+		
+		
+		System.out.println(map01);
 		
 		
 		
-		System.out.println(map);
-		System.out.println(map1);
+		count = list.stream()
+				     .collect(Collectors.summingInt(w -> w.length()));
+			
+		
+		System.out.println(count);
+		
+		
+		count = list.stream()
+				    .mapToInt(w -> w.length())
+				    .sum();
+		
+		System.out.println(count);
 		
 		
 		
