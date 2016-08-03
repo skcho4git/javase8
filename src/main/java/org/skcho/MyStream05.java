@@ -30,6 +30,7 @@ public class MyStream05 {
 		
 		Map<String,List<String>> map00 = null;
 		Map<String,Long> map01 = null;
+		Map<String,Integer> map02 = null;
 		int count = 0;
 		
 		
@@ -44,6 +45,14 @@ public class MyStream05 {
 		
 		
 		System.out.println(map01);
+		
+		
+		map02 = list.stream()
+				    .collect(Collectors.groupingBy(w -> w.substring(0,1),
+				    		                       Collectors.summingInt(w -> ((String)w).length())));
+		
+		
+		System.out.println(map02);
 		
 		
 		
