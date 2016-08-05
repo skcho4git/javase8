@@ -3,6 +3,7 @@ package org.skcho;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
 import java.util.stream.Collectors;
 
 /**
@@ -31,7 +32,9 @@ public class MyStream05 {
 		Map<String,List<String>> map00 = null;
 		Map<String,Long> map01 = null;
 		Map<String,Integer> map02 = null;
+		ConcurrentMap<String,List<String>> map03 = null;
 		int count = 0;
+		
 		
 		
 		map00 = list.stream()
@@ -53,6 +56,14 @@ public class MyStream05 {
 		
 		
 		System.out.println(map02);
+		
+		
+		map03 = list.parallelStream()
+				    .collect(Collectors.groupingByConcurrent(w -> w.substring(0,1)));
+				    //.collect(Collectors.toConcurrentMap(w -> w.substring(0,1), w -> w));
+		
+		
+		System.out.println(map03);
 		
 		
 		
