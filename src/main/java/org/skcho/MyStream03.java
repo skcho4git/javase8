@@ -27,6 +27,8 @@ public class MyStream03 {
 		
 		List<String> list = Arrays.asList("0","1","2","3","4","5","6","7","8","9");
 		
+		//String[] hoge = (String[])list.toArray();
+		
 		Integer sum = list.stream()
 				          //.map(x -> Integer.valueOf(x))
 				          .map(Integer::valueOf)
@@ -35,7 +37,7 @@ public class MyStream03 {
 		System.out.println(sum);
 		
 		
-		Integer sum1 = list.stream()
+		int sum1 = list.stream()
 				           .mapToInt(Integer::parseInt)
 				           .reduce(0, (x,y) -> x + y);
 		
